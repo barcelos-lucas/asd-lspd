@@ -1,0 +1,149 @@
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: var(--glow-accent);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-alt);
+  color: #07020f;
+  transform: translateY(-2px);
+  box-shadow: var(--glow-alt);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-alt);
+  transform: translateY(-2px);
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-block;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent-alt);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-pill);
+  background: rgba(124, 58, 237, 0.08);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-slow);
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--glow-accent);
+  transform: translateY(-4px);
+}
+
+.card-lined::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-alt));
+  transform: scaleX(0);
+  transition: transform var(--transition-slow);
+  transform-origin: left;
+}
+
+.card-lined:hover::before {
+  transform: scaleX(1);
+}
+
+/* ── Code tag ── */
+.code-tag {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--color-accent-alt);
+  background: rgba(192, 132, 252, 0.08);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+/* ── Step number ── */
+.step-num {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent-alt);
+  background: rgba(192, 132, 252, 0.08);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Dot ── */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent-alt);
+  flex-shrink: 0;
+}
+
+/* ── Stat card ── */
+.stat-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.stat-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--glow-accent);
+  transform: translateY(-3px);
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-accent-alt);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: var(--space-xs);
+}
