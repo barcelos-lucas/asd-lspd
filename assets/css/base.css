@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+section {
+  padding: var(--space-3xl) 0;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+.section-desc {
+  color: var(--color-muted);
+  max-width: 600px;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.surface-bg {
+  background-color: var(--color-surface);
+}
+
+/* ── Splash Screen ── */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.splash__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/images/logo-asd.png');
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.06;
+}
+
+.splash__logo {
+  position: relative;
+  z-index: 2;
+  width: 320px;
+  height: 320px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 40px rgba(124, 58, 237, 0.4));
+  animation: splashPulse 2s ease-in-out infinite;
+}
+
+@keyframes splashPulse {
+  0%, 100% { transform: scale(1);    opacity: 1; }
+  50%       { transform: scale(1.04); opacity: 0.9; }
+}
+
+.splash.hidden {
+  opacity: 0;
+  visibility: hidden;
+}

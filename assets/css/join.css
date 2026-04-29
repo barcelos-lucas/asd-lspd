@@ -1,0 +1,247 @@
+/* ── Layout principal ── */
+.soon {
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: var(--space-2xl) var(--space-xl);
+  padding-top: calc(var(--nav-height) + var(--space-2xl));
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 40%, rgba(26, 140, 255, 0.1) 0%, transparent 70%),
+    var(--color-bg);
+  overflow: hidden;
+}
+
+.soon__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(26, 140, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 140, 255, 0.06) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.soon__ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(26, 140, 255, 0.12);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: ringPulse 4s ease-in-out infinite;
+  width: 500px;
+  height: 500px;
+}
+
+.soon__ring--outer {
+  width: 750px;
+  height: 750px;
+  border-color: rgba(26, 140, 255, 0.05);
+  animation-delay: 1.2s;
+}
+
+@keyframes ringPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1);     opacity: 0.5; }
+  50%       { transform: translate(-50%, -50%) scale(1.04);  opacity: 1;   }
+}
+
+/* ── Conteúdo ── */
+.soon__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-lg);
+  max-width: 600px;
+  width: 100%;
+}
+
+.soon__icon {
+  font-size: 4rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.soon__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffffff 30%, var(--color-accent-alt) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.soon__desc {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+/* ── Status banner ── */
+.soon__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md); /* Adicionado para espaçar do botão de inscrição */
+}
+
+.soon__status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f59e0b;
+  animation: blink 1.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ── Botão desabilitado ── */
+.soon__btn-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.soon__btn-wrap--top {
+  margin-bottom: var(--space-xl); /* Espaçamento entre o botão de inscrição e o título */
+}
+
+.btn--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.soon__btn-label {
+  font-size: 0.7rem;
+  color: #f59e0b;
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+}
+
+/* ── Info cards ── */
+.soon__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+.soon__info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  text-align: left;
+  transition: all var(--transition-base);
+}
+
+.soon__info-item:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--glow-accent);
+}
+
+.soon__info-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.soon__info-item h3 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--color-text);
+}
+
+.soon__info-item p {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  line-height: 1.55;
+}
+
+/* ── CTA ── */
+.soon__cta {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-2xl); /* Aumentado o espaçamento para separar das infos */
+  margin-bottom: var(--space-xl); /* Adicionado para espaçar do footer */
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.footer__brand {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--color-accent-alt);
+  margin-bottom: var(--space-sm);
+}
+
+.footer__text {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.footer__credit {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  margin-top: var(--space-sm);
+  opacity: 0.6;
+}
+
+.footer__credit span {
+  color: var(--color-accent-alt);
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .soon__ring       { width: 320px; height: 320px; }
+  .soon__ring--outer { width: 500px; height: 500px; }
+
+  .soon__cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .soon__cta .btn {
+    text-align: center;
+  }
+}
