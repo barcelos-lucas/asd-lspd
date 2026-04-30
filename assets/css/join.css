@@ -8,19 +8,20 @@
   position: relative;
   padding: var(--space-2xl) var(--space-xl);
   padding-top: calc(var(--nav-height) + var(--space-2xl));
-  background:
-    radial-gradient(ellipse 70% 60% at 50% 40%, rgba(26, 140, 255, 0.1) 0%, transparent 70%),
-    var(--color-bg);
   overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 40%, 
+    rgba(7, 2, 15, 0.65) 0%, 
+    rgba(7, 2, 15, 0.75) 0%, 
+    rgba(7, 2, 15, 0.75) 30%, 
+    rgba(7, 2, 15, 0.92) 100%), 
+    url('../images/image.png') center top / cover no-repeat, 
+    var(--color-bg); 
 }
 
 .soon__grid {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(26, 140, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(26, 140, 255, 0.06) 1px, transparent 1px);
-  background-size: 50px 50px;
   pointer-events: none;
 }
 
@@ -101,7 +102,7 @@
   padding: 0.4rem 1rem;
   border-radius: var(--radius-pill);
   letter-spacing: 0.05em;
-  margin-bottom: var(--space-md); /* Adicionado para espaçar do botão de inscrição */
+  margin-bottom: var(--space-md);
 }
 
 .soon__status-dot {
@@ -127,7 +128,7 @@
 }
 
 .soon__btn-wrap--top {
-  margin-bottom: var(--space-xl); /* Espaçamento entre o botão de inscrição e o título */
+  margin-bottom: var(--space-xl);
 }
 
 .btn--disabled {
@@ -194,8 +195,8 @@
   gap: var(--space-md);
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: var(--space-2xl); /* Aumentado o espaçamento para separar das infos */
-  margin-bottom: var(--space-xl); /* Adicionado para espaçar do footer */
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-xl);
 }
 
 /* ── Footer ── */
