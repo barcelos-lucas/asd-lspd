@@ -10,7 +10,7 @@
   padding-top: calc(var(--nav-height) + var(--space-xl));
   overflow: hidden;
 
-  background-image: url('/assets/images/image.png');
+  background-image: url('../images/image.png');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
